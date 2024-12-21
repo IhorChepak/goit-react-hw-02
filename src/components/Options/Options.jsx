@@ -1,15 +1,13 @@
-export default function Options({ options, updateFeedback, resetFeedback, totalFeedback}) {
+export default function Options({  updateFeedback, resetFeedback, showReset}) {
     return (
         <div>
-            {options.map(option => (
-                <button key={option} onClick={() => updateFeedback(option)}>
-                    {option}
-                </button>
-            ))}
-            
+            <button onClick={() => updateFeedback('good')}>Good</button>
+            <button onClick={() => updateFeedback('neutral')}>Neutral</button>
+            <button onClick={() => updateFeedback('bad')}>Bad</button>
+            {showReset &&  ( 
                 <button onClick={resetFeedback} >
                     Reset
-                </button>
+                </button>)}
             
         </div>
     );
